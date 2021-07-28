@@ -1,0 +1,31 @@
+.navbar {
+  top: 30px;
+  position: sticky;
+  width: 100%;
+  z-index: 100;
+  background: #8e0000;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.app-title {
+  font-size: 30px;
+  margin: 10px;
+  font-weight: bold;
+  letter-spacing: 7px;
+}
+
+button {
+  font-size: 15px;
+  color: white;
+  font-weight: normal;
+}
+
+.nav-links {
+  margin-right: 10px;
+}

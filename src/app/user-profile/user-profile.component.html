@@ -1,0 +1,75 @@
+<app-navbar></app-navbar>
+<div class="profile-container">
+  <!-- Update User Profile -->
+  <mat-card class="update-container">
+    <div class="user-profile-title">
+      <mat-card-header>
+        <mat-card-title>User Profile</mat-card-title>
+      </mat-card-header>
+    </div>
+    <div class="user-profile-content">
+      <mat-card-content>
+        <mat-card-subtitle> Username: {{ user.Username }} </mat-card-subtitle>
+        <mat-card-subtitle> Email: {{ user.Email }} </mat-card-subtitle>
+        <mat-card-subtitle>
+          Date of birth:{{ user.Birthday | date: "dd/MM/yyyy" }}
+        </mat-card-subtitle>
+      </mat-card-content>
+      <div class="buttons-user-profile">
+        <mat-card-actions>
+          <button
+            mat-raised-button
+            (click)="openUserProfileEditDialog()"
+            color="primaryred"
+            aria-label="button submits form to update user profile"
+          >
+            Update Profile
+          </button>
+          <button
+            mat-raised-button
+            (click)="openUserPasswordEditDialog()"
+            color="primaryred"
+            aria-label="button submits form to update user password"
+          >
+            Update Password
+          </button>
+          <button
+            mat-raised-button
+            (click)="openUserProfileDeleteDialog()"
+            aria-label="button to delete user account"
+            color="secondary"
+          >
+            Delete Account
+          </button>
+        </mat-card-actions>
+      </div>
+    </div>
+  </mat-card>
+  <!-- Favorite Movies List -->
+  <h2>Your Favorite Movies:</h2>
+  <div class="favorites-container">
+    <mat-card
+      class="favorites-card-container"
+      *ngFor="let favorite of favoriteMovies"
+    >
+      <mat-card-header class="favorite-card-header">
+        <mat-card-title class="favorite-card-title">{{
+          favorite.Title
+        }}</mat-card-title>
+        <mat-card-subtitle
+          >Directed by: {{ favorite.Director.Name }}</mat-card-subtitle
+        >
+      </mat-card-header>
+      <img src="{{ favorite.ImagePath }}" alt="{{ favorite.Title }}" />
+      <mat-card-actions class="favorite-card-actions-container">
+        <button
+          mat-button
+          color="secondary"
+          (click)="deleteMovieFavorites(favorite._id, favorite.Title)"
+        >
+          Remove from favorites
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
