@@ -189,7 +189,7 @@ export class GetGenreService {
   constructor(private http: HttpClient) {}
 
   // Making the API call to get genres information
-  getGenre(): Observable<any> {
+  public getGenre(): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
       .get(apiUrl + 'movies/genres/:Name', {
@@ -226,11 +226,11 @@ export class GetUserService {
   constructor(private http: HttpClient) {}
 
   // Making the API call to get user information
-  public getUser(): Observable<any> {
+  getUser(user: any): Observable<any> {
     const token = localStorage.getItem('token');
-    const user = localStorage.getItem('user');
+    // const user = localStorage.getItem('user');
     return this.http
-      .get(`${apiUrl}users/${user}`, {
+      .get(apiUrl + `users/${user.Username}`, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),

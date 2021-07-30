@@ -68,7 +68,7 @@ export class UserProfileComponent implements OnInit {
 
   getUser(): void {
     const user = localStorage.getItem('user');
-    this.fetchApiData2.getUser().subscribe((response: any) => {
+    this.fetchApiData2.getUser(user).subscribe((response: any) => {
       this.user = response;
       console.log(this.user);
       this.getMovies();

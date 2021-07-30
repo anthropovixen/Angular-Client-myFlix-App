@@ -1,1 +1,20 @@
-<p>movie-direction works!</p>
+<div class="director-container">
+  <mat-toolbar>
+    <mat-toolbar-row class="director-header">
+      <h3 mat-dialog-title class="director-title">
+        {{ data.name }}
+      </h3>
+      <button
+        mat-icon-button
+        aria-label="Close button"
+        mat-dialog-close
+        close="primary"
+      >
+        <mat-icon>Close</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-dialog-content class="director-content">
+    {{ data.bio }}
+  </mat-dialog-content>
+</div>

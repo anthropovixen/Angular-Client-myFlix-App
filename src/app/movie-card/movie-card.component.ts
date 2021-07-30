@@ -3,6 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+import { MovieDirectionComponent } from '../movie-direction/movie-direction.component';
+import { MovieGenreComponent } from '../movie-genre/movie-genre.component';
+import { MovieSynopsisComponent } from '../movie-synopsis/movie-synopsis.component';
+
 import {
   GetAllMoviesService,
   GetUserService,
@@ -41,10 +45,28 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  openDirectionDialog(name: string, bio: string): void {
+    this.dialog.open(MovieDirectionComponent, {
+      data: { name, bio },
+    });
+  }
+
+  openGenreDialog(name: string, description: string): void {
+    this.dialog.open(MovieGenreComponent, {
+      data: { name, description },
+    });
+  }
+
+  openSynopsisDialog(description: string): void {
+    this.dialog.open(MovieSynopsisComponent, {
+      data: { description },
+    });
+  }
+
   getUserFavoriteMovies(): void {
     const user = localStorage.getItem('user');
     if (user) {
-      this.fetchApiData2.getUser().subscribe((response: any) => {
+      this.fetchApiData2.getUser(user).subscribe((response: any) => {
         this.favoriteMovies = response.favoriteMovies;
         console.log(this.favoriteMovies);
         return this.favoriteMovies;
@@ -52,15 +74,15 @@ export class MovieCardComponent implements OnInit {
     }
   }
 
-  addFavoriteMovie(id: string): void {
-    this.fetchApiData3.addFavoriteMovie(id).subscribe((response: any) => {
+  addFavoriteMovie(_id: string): void {
+    this.fetchApiData3.addFavoriteMovie(_id).subscribe((response: any) => {
       console.log(response);
       this.getUserFavoriteMovies();
     });
   }
 
-  deleteMovieFavorites(id: string): void {
-    this.fetchApiData4.deleteMovieFavorites(id).subscribe((response: any) => {
+  deleteMovieFavorites(_id: string): void {
+    this.fetchApiData4.deleteMovieFavorites(_id).subscribe((response: any) => {
       console.log(response);
       this.getUserFavoriteMovies();
     });
