@@ -1,5 +1,6 @@
 .delete-account-container {
   width: 250px;
+  text-align: center;
 }
 
 h3 {
@@ -12,4 +13,32 @@ h3 {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+button {
+  margin: 30px;
+  padding: 5px;
+  width: auto;
+  font-size: small;
+  color: white;
+}
+
+button:hover {
+  font-size: small;
+  background-color: #ff5f52;
+}
+
+h2 {
+  margin: 24px;
+  text-align: center;
+  font-size: medium;
+}
+
+.mat-primaryred {
+  background-color: #c62828;
+}
+
+.mat-secondary {
+  background-color: white;
+  color: black !important;
 }

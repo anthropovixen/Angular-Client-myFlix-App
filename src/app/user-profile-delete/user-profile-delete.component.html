@@ -1,21 +1,22 @@
-<mat-dialog-content class="delete-account-container">
-  <h3 mat-dialog-title>Are you sure you want to delete your account?</h3>
-  <div mat-dialog-actions class="delete-account-actions">
+<div class="delete-account-container">
+  <mat-dialog-content>
     <button
-      mat-raised-button
-      color="primary"
+      mat-icon-button
       aria-label="button that cancels deleting user account"
-      (click)="cancel()"
+      [mat-dialog-close]="true"
     >
-      Cancel
+      <mat-icon>close</mat-icon>
     </button>
-    <button
-      mat-stroked-button
-      color="warning"
-      aria-label="button that deletes user account"
-      (click)="deleteUserProfile()"
-    >
-      Delete Account
-    </button>
-  </div>
-</mat-dialog-content>
+    <h3 mat-dialog-title>Are you sure you want to delete your account?</h3>
+    <div mat-dialog-actions class="delete-account-actions">
+      <button
+        mat-stroked-button
+        color="primaryred"
+        aria-label="button that deletes user account"
+        (click)="deleteUserProfile()"
+      >
+        Delete Account
+      </button>
+    </div>
+  </mat-dialog-content>
+</div>

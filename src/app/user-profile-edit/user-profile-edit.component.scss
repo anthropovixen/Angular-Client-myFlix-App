@@ -5,3 +5,31 @@
 .mat-card-header {
   margin-top: 20px;
 }
+
+.mat-icon-button {
+  color: white;
+  align-items: center;
+}
+
+button {
+  margin: 30px;
+  padding: 5px;
+  width: auto;
+  font-size: small;
+  color: white;
+}
+
+button:hover {
+  font-size: small;
+  background-color: #ff5f52;
+}
+
+h2 {
+  margin: 24px;
+  text-align: center;
+  font-size: medium;
+}
+
+.mat-primaryred {
+  background-color: #c62828;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
@@ -7,7 +7,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   templateUrl: './movie-direction.component.html',
   styleUrls: ['./movie-direction.component.scss'],
 })
-export class MovieDirectionComponent implements OnInit {
+export class MovieDirectionComponent {
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
@@ -15,6 +15,4 @@ export class MovieDirectionComponent implements OnInit {
       bio: string;
     }
   ) {}
-
-  ngOnInit(): void {}
 }

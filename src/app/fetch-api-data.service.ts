@@ -226,11 +226,11 @@ export class GetUserService {
   constructor(private http: HttpClient) {}
 
   // Making the API call to get user information
-  getUser(user: any): Observable<any> {
+  getUser(Username: any): Observable<any> {
     const token = localStorage.getItem('token');
     // const user = localStorage.getItem('user');
     return this.http
-      .get(apiUrl + `users/${user.Username}`, {
+      .get(apiUrl + `users/${Username}`, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),
