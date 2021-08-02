@@ -1,22 +1,32 @@
-.director-header {
+.direction-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-flow: column wrap;
+  text-align: center;
 }
 
-.director-content {
-  max-height: 300px;
+button {
+  margin: 10px;
+  font-size: small;
+  color: #ff5f52;
+}
+
+.direction-header {
+  justify-content: center;
+}
+
+.direction-content {
+  max-height: 275px;
   overflow-y: auto;
 }
 
 @media all and (min-width: 768px) {
-  .director-container {
+  .direction-container {
     max-width: 400px;
   }
 }
 
 @media all and (min-width: 768px) {
-  .director-container {
+  .direction-container {
     max-width: 600px;
   }
 }
