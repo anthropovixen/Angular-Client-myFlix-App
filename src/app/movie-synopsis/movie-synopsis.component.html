@@ -1,17 +1,20 @@
 <div class="synopsis-container">
-  <button
-    mat-icon-button
-    aria-label="Close synopsis details"
-    [mat-dialog-close]="true"
-  >
-    <mat-icon>close</mat-icon>
-  </button>
-  <mat-toolbar>
-    <mat-toolbar-row class="synopsis-header">
-      <h3 mat-dialog-title class="synopsis-title">Synopsis</h3>
-    </mat-toolbar-row>
-  </mat-toolbar>
-  <mat-dialog-content class="synopsis-content">{{
-    data.synopsis
-  }}</mat-dialog-content>
+  <mat-card>
+    <button
+      mat-icon-button
+      class="close-button"
+      aria-label="close dialog"
+      mat-dialog-close
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+    <mat-toolbar>
+      <mat-toolbar-row class="synopsis-header">
+        <h3 mat-dialog-title class="synopsis-title">{{ data.Title }}</h3>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-dialog-content class="synopsis-content">
+      {{ data.Description }}
+    </mat-dialog-content>
+  </mat-card>
 </div>
