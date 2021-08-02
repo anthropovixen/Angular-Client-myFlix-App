@@ -1,4 +1,6 @@
 import { Component, Inject } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
@@ -11,7 +13,10 @@ export class MovieSynopsisComponent {
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
-      synopsis: string;
-    }
+      Title: string;
+      Description: string;
+    },
+    public dialogRef: MatDialogRef<MovieSynopsisComponent>,
+    public snackBar: MatSnackBar
   ) {}
 }
