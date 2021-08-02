@@ -1,11 +1,21 @@
-.genre-header {
+.genre-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-flow: column wrap;
+  text-align: center;
+}
+
+button {
+  margin: 10px;
+  font-size: small;
+  color: #ff5f52;
+}
+
+.genre-header {
+  justify-content: center;
 }
 
 .genre-content {
-  max-height: 300px;
+  max-height: 275px;
   overflow-y: auto;
 }
 
