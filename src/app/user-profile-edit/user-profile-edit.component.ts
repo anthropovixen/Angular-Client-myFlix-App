@@ -30,7 +30,7 @@ export class UserProfileEditComponent implements OnInit {
     this.fetchApiData2.editUserProfile(this.userData).subscribe(
       (response) => {
         this.dialogRef.close();
-        localStorage.setItem('user', response.Username);
+        localStorage.setItem('userName', response.Username);
         this.snackBar.open('Profile updated successfully!', 'OK', {
           duration: 2000,
         });
