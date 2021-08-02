@@ -1,13 +1,20 @@
 <div class="genre-container">
-  <button mat-icon-button aria-label="Close button" [mat-dialog-close]="true">
-    <mat-icon>close</mat-icon>
-  </button>
-  <mat-toolbar>
-    <mat-toolbar-row class="genre-header">
-      <h3 mat-dialog-title class="genre-title">{{ data.name }}</h3>
-    </mat-toolbar-row>
-  </mat-toolbar>
-  <mat-dialog-content class="genre-content">
-    {{ data.description }}
-  </mat-dialog-content>
+  <mat-card>
+    <button
+      mat-icon-button
+      class="close-button"
+      aria-label="close dialog"
+      mat-dialog-close
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+    <mat-toolbar>
+      <mat-toolbar-row class="genre-header">
+        <h3 mat-dialog-title class="genre-title">{{ data.Name }}</h3>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-dialog-content class="genre-content">
+      {{ data.Description }}
+    </mat-dialog-content>
+  </mat-card>
 </div>
