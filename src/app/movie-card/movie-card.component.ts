@@ -40,35 +40,17 @@ export class MovieCardComponent implements OnInit {
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((response: any) => {
       this.movies = response;
-      console.log(this.movies);
+      console.log(response);
       return this.movies;
     });
   }
 
-  openDirectionDialog(name: string, bio: string): void {
-    this.dialog.open(MovieDirectionComponent, {
-      data: { name, bio },
-    });
-  }
-
-  openGenreDialog(name: string, description: string): void {
-    this.dialog.open(MovieGenreComponent, {
-      data: { name, description },
-    });
-  }
-
-  openSynopsisDialog(description: string): void {
-    this.dialog.open(MovieSynopsisComponent, {
-      data: { description },
-    });
-  }
-
   getUserFavoriteMovies(): void {
-    const user = localStorage.getItem('user');
-    if (user) {
-      this.fetchApiData2.getUser(user).subscribe((response: any) => {
-        this.favoriteMovies = response.favoriteMovies;
-        console.log(this.favoriteMovies);
+    const userName = localStorage.getItem('userName');
+    if (userName) {
+      this.fetchApiData2.getUser().subscribe((response: any) => {
+        this.favoriteMovies = response.FavoriteMovies;
+        // console.log(this.favoriteMovies);
         return this.favoriteMovies;
       });
     }
@@ -85,6 +67,27 @@ export class MovieCardComponent implements OnInit {
     this.fetchApiData4.deleteMovieFavorites(_id).subscribe((response: any) => {
       console.log(response);
       this.getUserFavoriteMovies();
+    });
+  }
+
+  openDirectionDialog(Name: string, Bio: string): void {
+    this.dialog.open(MovieDirectionComponent, {
+      data: { Name, Bio },
+      width: '350px',
+    });
+  }
+
+  openGenreDialog(Name: string, Description: string): void {
+    this.dialog.open(MovieGenreComponent, {
+      data: { Name, Description },
+      width: '350px',
+    });
+  }
+
+  openSynopsisDialog(Title: string, Description: string): void {
+    this.dialog.open(MovieSynopsisComponent, {
+      data: { Title, Description },
+      width: '350px',
     });
   }
 }
