@@ -1,6 +1,49 @@
+// .movies-container {
+//   display: grid;
+//   grid: auto / 1fr 1fr 1fr;
+//   gap: 15px;
+//   width: 80%;
+//   margin-top: 15px;
+//   margin-left: 10%;
+//   align-items: center;
+// }
+
+.movies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  padding: 0 24px 20px 24px;
+  margin: 40px auto;
+  max-width: 1350px;
+  gap: 15px;
+  align-items: stretch;
+  grid-auto-rows: 515px;
+  grid-auto-flow: dense;
+}
+
+.mat-card-header {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+}
+
+img {
+  border-radius: 5px;
+  margin: 0 auto;
+  max-width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
 button {
   margin: 15px;
-  padding: 2px;
   font-size: medium;
   color: black;
+}
+
+.mat-card-actions {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
 }
