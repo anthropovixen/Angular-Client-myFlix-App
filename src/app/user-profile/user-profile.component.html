@@ -9,10 +9,12 @@
     </div>
     <div class="user-profile-content">
       <mat-card-content>
-        <mat-card-subtitle> Username: {{ user.Username }} </mat-card-subtitle>
-        <mat-card-subtitle> Email: {{ user.Email }} </mat-card-subtitle>
         <mat-card-subtitle>
-          Date of birth:{{ user.Birthday | date: "dd/MM/yyyy" }}
+          Username: {{ userName.Username }}
+        </mat-card-subtitle>
+        <mat-card-subtitle> Email: {{ userName.Email }} </mat-card-subtitle>
+        <mat-card-subtitle>
+          Date of birth:{{ userName.Birthday | date: "dd/MM/yyyy" }}
         </mat-card-subtitle>
       </mat-card-content>
       <div class="buttons-user-profile">
@@ -50,22 +52,22 @@
   <div class="favorites-container">
     <mat-card
       class="favorites-card-container"
-      *ngFor="let favorite of favoriteMovies"
+      *ngFor="let movie of FavoriteMovies"
     >
       <mat-card-header class="favorite-card-header">
         <mat-card-title class="favorite-card-title">{{
-          favorite.Title
+          movie.Title
         }}</mat-card-title>
         <mat-card-subtitle
-          >Directed by: {{ favorite.Director.Name }}</mat-card-subtitle
+          >Directed by: {{ movie.Director.Name }}</mat-card-subtitle
         >
       </mat-card-header>
-      <img src="{{ favorite.ImagePath }}" alt="{{ favorite.Title }}" />
+      <img src="{{ movie.ImagePath }}" alt="{{ movie.Title }}" />
       <mat-card-actions class="favorite-card-actions-container">
         <button
           mat-button
           color="secondary"
-          (click)="deleteMovieFavorites(favorite._id, favorite.Title)"
+          (click)="deleteMovieFavorites(movie._id, movie.Title)"
         >
           Remove from favorites
         </button>
