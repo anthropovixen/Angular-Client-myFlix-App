@@ -26,8 +26,8 @@ export class UserProfileComponent implements OnInit {
   @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };
 
   movies: any = [];
-  user: any = {};
-  favoriteMovies: any = [];
+  userName: any = {};
+  FavoriteMovies: any = [];
 
   constructor(
     public fetchApiData: GetAllMoviesService,
@@ -39,7 +39,7 @@ export class UserProfileComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getUser();
+    this.getMovies();
   }
 
   // Open dialog box to update user account details
@@ -66,34 +66,29 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
-  getUser(): void {
-    const user = localStorage.getItem('user');
-    this.fetchApiData2.getUser(user).subscribe((response: any) => {
-      this.user = response;
-      console.log(this.user);
-      this.getMovies();
-    });
-  }
-
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((response: any) => {
       this.movies = response;
       return this.movies;
     });
-    this.filterFavorites();
+    this.getUser();
   }
 
-  filterFavorites(): void {
-    this.movies.forEach((movie: any) => {
-      if (this.user.FavoriteMovies.includes(movie._id)) {
-        this.favoriteMovies.push(movie);
-      }
+  getUser(): void {
+    const userName = localStorage.getItem('userName');
+    this.fetchApiData2.getUser().subscribe((response: any) => {
+      this.userName = response;
+      this.FavoriteMovies = this.movies.filter((movie: any) =>
+        this.userName.FavoriteMovies.includes(movie._id)
+      );
+      console.log(this.userName);
+      console.log(this.FavoriteMovies);
+      return this.userName, this.FavoriteMovies;
     });
-    return this.favoriteMovies;
   }
 
   deleteMovieFavorites(id: string, title: string): void {
-    this.fetchApiData3.deleteMovieFavorites(id).subscribe(() => {
+    this.fetchApiData3.deleteMovieFavorites(id).subscribe((response: any) => {
       this.snackBar.open(
         `${title} has been removed from your favorites`,
         'OK',
