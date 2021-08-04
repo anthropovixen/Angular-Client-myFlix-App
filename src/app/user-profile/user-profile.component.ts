@@ -15,7 +15,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 // Import components
 import { UserProfileEditComponent } from '../user-profile-edit/user-profile-edit.component';
 import { UserProfileDeleteComponent } from '../user-profile-delete/user-profile-delete.component';
-import { UserPasswordEditComponent } from '../user-password-edit/user-password-edit.component';
 
 @Component({
   selector: 'app-user-profile',
@@ -49,13 +48,6 @@ export class UserProfileComponent implements OnInit {
       data: {
         onSuccess: () => this.getUser(),
       },
-    });
-  }
-
-  // Open dialog to update password
-  openUserPasswordEditDialog(): void {
-    this.dialog.open(UserPasswordEditComponent, {
-      width: '300px',
     });
   }
 

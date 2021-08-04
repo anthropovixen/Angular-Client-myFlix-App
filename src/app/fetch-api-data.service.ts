@@ -335,42 +335,6 @@ export class EditUserProfileService {
   }
 }
 
-// Edit User Password
-@Injectable({
-  providedIn: 'root',
-})
-export class EditUserPasswordService {
-  constructor(private http: HttpClient) {}
-
-  public editUserPassword(userPassword: any): Observable<any> {
-    const token = localStorage.getItem('token');
-    const userName = localStorage.getItem('userName');
-    return this.http
-      .put(apiUrl + `users/${userName}/password`, userPassword, {
-        headers: new HttpHeaders({
-          Authorization: 'Bearer ' + token,
-        }),
-      })
-      .pipe(map(this.extractResponseData), catchError(this.handleError));
-  }
-
-  private extractResponseData(res: Response | {}): Response | {} {
-    const body = res;
-    return body || {};
-  }
-
-  private handleError(error: HttpErrorResponse): any {
-    if (error.error instanceof ErrorEvent) {
-      console.error('An error occurred: ', error.error.message);
-    } else {
-      console.error(
-        `Error status code ${error.status}, ` + `Error body is ${error.error}`
-      );
-    }
-    return throwError('Something bad happened; please try again later');
-  }
-}
-
 // Delete User Profile
 @Injectable({
   providedIn: 'root',
