@@ -27,7 +27,7 @@ export class UserProfileComponent implements OnInit {
 
   movies: any = [];
   userName: any = {};
-  FavoriteMovies: any = [];
+  favoriteMovies: any = [];
 
   constructor(
     public fetchApiData: GetAllMoviesService,
@@ -78,12 +78,12 @@ export class UserProfileComponent implements OnInit {
     const userName = localStorage.getItem('userName');
     this.fetchApiData2.getUser().subscribe((response: any) => {
       this.userName = response;
-      this.FavoriteMovies = this.movies.filter((movie: any) =>
+      this.favoriteMovies = this.movies.filter((movie: any) =>
         this.userName.FavoriteMovies.includes(movie._id)
       );
       console.log(this.userName);
-      console.log(this.FavoriteMovies);
-      return this.userName, this.FavoriteMovies;
+      console.log(this.favoriteMovies);
+      return this.userName, this.favoriteMovies;
     });
   }
 
