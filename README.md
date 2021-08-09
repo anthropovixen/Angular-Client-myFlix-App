@@ -32,3 +32,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ### Author
 
 [Tanimara Elias Santos](https://github.com/anthropovixen)
+
+### Version
+
+1.0.0
