@@ -37,6 +37,10 @@ export class MovieCardComponent implements OnInit {
     this.getUserFavoriteMovies();
   }
 
+  /** Function fetches movie data from database
+   * @returns movies - array of movie objects
+   */
+
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((response: any) => {
       this.movies = response;
@@ -44,6 +48,10 @@ export class MovieCardComponent implements OnInit {
       return this.movies;
     });
   }
+
+  /** Function fetches user's favorite movies from user account on database
+   * @returns favoriteMovies - array of movie IDs
+   */
 
   getUserFavoriteMovies(): void {
     const userName = localStorage.getItem('userName');
@@ -56,6 +64,10 @@ export class MovieCardComponent implements OnInit {
     }
   }
 
+  /** Function adds movie ID to user's favorite movies list - FavoriteMovies
+   * @params id - movie ID
+   */
+
   addFavoriteMovie(_id: string): void {
     this.fetchApiData3.addFavoriteMovie(_id).subscribe((response: any) => {
       console.log(response);
@@ -63,6 +75,7 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /** Function deletes movie ID from FavoriteMovies array in user account on database */
   deleteMovieFavorites(_id: string): void {
     this.fetchApiData4.deleteMovieFavorites(_id).subscribe((response: any) => {
       console.log(response);
@@ -70,6 +83,10 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**Function opens dialog to display direction's data
+   * @params Name
+   * @params Bio
+   */
   openDirectionDialog(Name: string, Bio: string): void {
     this.dialog.open(MovieDirectionComponent, {
       data: { Name, Bio },
@@ -77,6 +94,10 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**Function opens dialog to display movie's genre data
+   * @params Name
+   * @params Description
+   */
   openGenreDialog(Name: string, Description: string): void {
     this.dialog.open(MovieGenreComponent, {
       data: { Name, Description },
@@ -84,6 +105,10 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /** Function opens dialog to display movie's synopsis
+   * @params Title
+   * @params Descriptionß
+   */
   openSynopsisDialog(Title: string, Description: string): void {
     this.dialog.open(MovieSynopsisComponent, {
       data: { Title, Description },

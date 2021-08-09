@@ -10,6 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
+  /** Function clears user ID and bearer token from localStorage, logging user out of app */
   constructor(public router: Router, public snackBar: MatSnackBar) {}
   logOutUser(): void {
     localStorage.clear();

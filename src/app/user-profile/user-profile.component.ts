@@ -41,7 +41,8 @@ export class UserProfileComponent implements OnInit {
     this.getMovies();
   }
 
-  // Open dialog box to update user account details
+  /** Function opens dialog box to update user account details
+   */
   openUserProfileEditDialog(): void {
     this.dialog.open(UserProfileEditComponent, {
       width: '300px',
@@ -51,13 +52,17 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
-  // Open dialog to delete user account
+  /** Function opens dialog to delete user account */
   openUserProfileDeleteDialog(): void {
     this.dialog.open(UserProfileDeleteComponent, {
       width: '300px',
     });
   }
 
+  /** Function fetches movie data to populate movie-card component with all movies from database
+   * @returns {array} movies - array of movie objects
+   * calls getUser function
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((response: any) => {
       this.movies = response;
@@ -66,6 +71,12 @@ export class UserProfileComponent implements OnInit {
     this.getUser();
   }
 
+  /**Function fetches user account details from database to populate user profile information
+   * Matches user's FavoriteMovies array of movie IDs with movie IDs in movies array, and
+   * populates favoriteMovies array with movie data to display in browser
+   * @returns userName - user account details
+   * @returns favoriteMovies - array of movie objects with user's favorite movies
+   */
   getUser(): void {
     const userName = localStorage.getItem('userName');
     this.fetchApiData2.getUser().subscribe((response: any) => {
@@ -79,6 +90,10 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /** Function deletes movie ID from user's favorite movies list on database
+   * @params id - movie ID
+   * @params title - movie Title
+   */
   deleteMovieFavorites(id: string, title: string): void {
     this.fetchApiData3.deleteMovieFavorites(id).subscribe((response: any) => {
       this.snackBar.open(

@@ -26,10 +26,12 @@ export class UserProfileEditComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /** Function sends user profile form input to database to update user account details, then updates user profile in app */
+
   editUserProfile(): void {
     this.fetchApiData2.editUserProfile(this.userData).subscribe(
       (response) => {
-        this.dialogRef.close();
+        this.dialogRef.close(); //closes dialog box after editing profile
         localStorage.setItem('userName', response.Username);
         this.snackBar.open('Profile updated successfully!', 'OK', {
           duration: 2000,

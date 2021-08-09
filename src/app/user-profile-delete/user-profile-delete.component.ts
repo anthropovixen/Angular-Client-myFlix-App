@@ -22,12 +22,12 @@ export class UserProfileDeleteComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // Delete user account from database
+  /** Function deletes user account from database */
 
   deleteUserProfile(): void {
     this.fetchApiData.deleteUserProfile().subscribe(
       () => {
-        this.dialogRef.close();
+        this.dialogRef.close(); //closes dialog box after deletion of account
         localStorage.clear();
         this.snackBar.open(
           'So sad to see you go. Your account has been deleted.',
@@ -37,6 +37,7 @@ export class UserProfileDeleteComponent implements OnInit {
           }
         );
         this.router.navigate(['welcome']).then(() => {
+          // redirects app to welcome page after account deletion
           window.location.reload();
         });
       },
@@ -48,7 +49,7 @@ export class UserProfileDeleteComponent implements OnInit {
     );
   }
 
-  // User cancels account deletion
+  /** Function cancels account deletion and reloads profile page */
 
   cancel(): void {
     this.router.navigate(['/profile']).then(() => {

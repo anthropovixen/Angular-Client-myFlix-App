@@ -10,6 +10,11 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./movie-synopsis.component.scss'],
 })
 export class MovieSynopsisComponent {
+  /** Injects details data from single movie-card object for use in movie-synopsis component
+   * @params data - string of objects
+   * @params Title
+   * @params Description
+   */
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
