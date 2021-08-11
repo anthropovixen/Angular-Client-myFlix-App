@@ -2,7 +2,7 @@
 
 myFlix Angular Client is the client-side of a movie database application built with Angular using an existing server-side and a MongoDB database.
 
-This app provies users with access to information about different movies, directors and genres. Users are able to sign up, update personal information and create and edit a list with their favorite movies.
+This app provides users with access to information about different movies, directors and genres. Users are able to sign up, update personal information and create and edit a list with their favorite movies.
 
 **See the hosted application [here](https://anthropovixen.github.io/Angular-Client-myFlix-App).**
 
