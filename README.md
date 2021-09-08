@@ -29,6 +29,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - Allows users to update or delete their account
 - Allows users to add or remove movies from their list of favorite movies
 
+## Technologies
+
+- Angular
+- Express
+- Mongoose
+- Node
+
 ### Author
 
 [Tanimara Elias Santos](https://github.com/anthropovixen)
