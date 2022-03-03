@@ -6,7 +6,7 @@ This app provides users with access to information about different movies, direc
 
 **See the hosted application [here](https://tanimaraeliassantos.github.io/Angular-Client-myFlix-App/welcome).**
 
-View the website built with React [here](https://moviesmyflix.netlify.app/) and its repository [here](https://github.com/anthropovixen/myFlix-client).
+View the website built with React [here](https://moviesmyflix.netlify.app/) and its repository [here](https://github.com/tanimaraeliassantos/myFlix-client).
 
 View the back-end REST API database [here](https://github.com/tanimaraeliassantos/myFlix-Project).
 
