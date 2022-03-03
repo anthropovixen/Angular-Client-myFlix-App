@@ -4,11 +4,11 @@ myFlix Angular Client is the client-side of a movie database application built w
 
 This app provides users with access to information about different movies, directors and genres. Users are able to sign up, update personal information and create and edit a list with their favorite movies.
 
-**See the hosted application [here](https://anthropovixen.github.io/Angular-Client-myFlix-App).**
+**See the hosted application [here](https://tanimaraeliassantos.github.io/Angular-Client-myFlix-App/welcome).**
 
 View the website built with React [here](https://moviesmyflix.netlify.app/) and its repository [here](https://github.com/anthropovixen/myFlix-client).
 
-View the back-end REST API database [here](https://github.com/anthropovixen/myFlix-Project).
+View the back-end REST API database [here](https://github.com/tanimaraeliassantos/myFlix-Project).
 
 ## Start the App
 
